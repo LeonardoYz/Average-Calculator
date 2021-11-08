@@ -14,7 +14,6 @@
 
 <h3>👀 Preview</h3>
 
-#
 
 ![screenshot](readme-files/project-preview.gif)
 
