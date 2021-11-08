@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="assets/images/calculator.png" type="image/x-icon">
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+
+    <title>Calculadora de média</title>
+  </head>
+  <body>
+    <main>
+      <section id="note" class="section">
+        <div class="note__logo">
+          <a href="https://alura.com.br/" target="_blank">
+            <img
+              src="assets/icons/alura-logo.svg"
+              alt="Alura Logo"
+              class="alura-logo"
+          /></a>
+        </div>
+
+        <div class="wrapper">
+          <div class="note__image">
+            <img src="assets/icons/imersao-dev-logo.svg" />
+          </div>
+
+          <div class="note__text">
+            <h1 class="title">Calculadora de média</h1>
+            <p class="subtitle">
+              Descubra qual a sua média de nota de todas as provas!
+            </p>
+          </div>
+
+          <div class="note__content">
+            <div class="note__image--class">
+              <img src="assets/icons/testament.svg" />
+            </div>
+
+            <form class="note__form">
+              <div class="note__input--box">
+                <i class="uil uil-pen"></i>
+                <input
+                  class="form__input"
+                  type="number"
+                  min="0"
+                  max="10"
+                  id="note-1"
+                  required
+                />
+                <label for="note-1">Digite a nota do primeiro bimestre</label>
+              </div>
+
+              <div class="note__input--box">
+                <i class="uil uil-pen"></i>
+                <input
+                  class="form__input"
+                  type="number"
+                  min="0"
+                  max="10"
+                  id="note-2"
+                  required
+                />
+                <label for="note-2">Digite a nota do segundo bimestre</label>
+              </div>
+
+              <div class="note__input--box">
+                <i class="uil uil-pen"></i>
+                <input
+                  class="form__input"
+                  type="number"
+                  min="0"
+                  max="10"
+                  id="note-3"
+                  required
+                />
+                <label for="note-3">Digite a nota do terceiro bimestre</label>
+              </div>
+
+              <div class="note__input--box">
+                <i class="uil uil-pen"></i>
+                <input
+                  class="form__input"
+                  type="number"
+                  min="0"
+                  max="10"
+                  id="note-4"
+                  required
+                />
+                <label for="note-4">Digite a nota do quarto bimestre</label>
+              </div>
+
+              <div class="note__button--box">
+                <button
+                  class="note__button"
+                  type="button"
+                  id="note--show"
+                  onclick="showFinalAverage()"
+                  accesskey="Enter"
+                >
+                  Ver nota <i class="uil uil-message button__icon"></i>
+                </button>
+              </div>
+            </form>
+
+            <div class="note__result">
+              <div class="close-icon" id="close-icon"></div>
+              <p class="result--paragraph"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

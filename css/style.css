@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@700&display=swap');
+/*==== GLOBALS ========================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 400 var(--normal-font-size) var(--open-sans);
+  line-height: 1.4;
+}
+
+img {
+  height: auto;
+  width: 100%;
+}
+
+/*==== VARIABLES ========================*/
+:root {
+  /*======== Colors ========*/
+  --content-background: hsl(0, 0%, 99%);
+  --linear-gradient-content-background: linear-gradient(
+    -45deg,
+    rgb(45, 189, 241),
+    rgb(82, 96, 219)
+  );
+  --linear-gradient-button-background: linear-gradient(
+    -30deg,
+    rgb(45, 189, 220),
+    rgb(82, 96, 219)
+  );
+  --input-box-background-color: hsl(0, 0%, 94%);
+  --form-input-color: hsl(0, 0%, 20%);
+  --button-background-color: hsl(201, 83%, 56%);
+  --button-background-color-hover: hsl(201, 83%, 66%);
+  --white: hsl(0, 0%, 97%);
+
+  /*======= Font and typography =======*/
+  --open-sans: 'Open Sans', sans-serif;
+  --poppins: 'Poppins', sans-serif;
+
+  /*======== Font size ========*/
+  --title-font-size: 1.4rem;
+  --close-icon-size: 1.1rem;
+  --normal-font-size: 1rem;
+  --subtitle-font-size: 0.875rem;
+  --label-font-size: 0.75rem;
+  --label-font-size-focus: 0.688rem;
+
+  /*======== Font weight ========*/
+  --regular-font: 400;
+  --bold-font: 700;
+}
+
+/*==== LAYOUT =============================*/
+.section {
+  padding: 1rem 0;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/*==== STYLES =============================*/
+.section {
+  height: 100vh;
+  background-image: url('../assets/images/waves-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.note__logo img {
+  display: block;
+  width: 2.3rem;
+  position: absolute;
+  top: 0.3rem;
+  right: 0.3rem;
+  transition: transform 300ms ease-in;
+}
+
+.note__logo img:hover {
+  transform: scale(1.1);
+}
+
+.note__image {
+  display: flex;
+  justify-content: center;
+}
+
+.note__image img {
+  display: block;
+  width: 10rem;
+  transition: transform 400ms ease-out;
+  margin-bottom: 0.5rem;
+}
+
+.note__image img:hover {
+  transform: scale(1.07);
+}
+
+.note__text {
+  color: var(--white);
+  text-align: center;
+}
+
+.note__text .title {
+  font: 700 var(--title-font-size) var(--poppins);
+}
+
+.note__text .subtitle {
+  font-size: var(--subtitle-font-size);
+  width: 15rem;
+  margin: 0 auto 0.8rem;
+}
+
+.note__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 3rem;
+  padding: 4rem 2.5rem 1rem 4.5rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-color: var(--content-background);
+  transition: transform 350ms ease-in, box-shadow 350ms ease-in;
+}
+
+.note__content::after {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: 55%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: var(--linear-gradient-content-background);
+}
+
+.note__content:hover {
+  transform: scale(0.99);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 0px 0px;
+}
+
+.note__image--class img {
+  display: block;
+  width: 12rem;
+  transition: transform 300ms ease-in;
+  position: relative;
+  top: 5rem;
+  left: 2rem;
+  z-index: 10;
+}
+
+.note__image--class img:hover {
+  transform: scale(1.05);
+}
+
+.note__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.note__form .note__input--box {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  max-width: 23.75rem;
+  width: 100%;
+  height: 2.8rem;
+  background-color: var(--input-box-background-color);
+  border-radius: 3.438rem;
+  padding: 0 0.4rem;
+}
+
+.note__input--box i {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+.note__input--box .form__input {
+  font: var(--bold-font) var(--subtitle-font-size) var(--poppins);
+  width: 80%;
+  padding: 0.5rem 0;
+  outline: none;
+  border: none;
+  background: none;
+  transform: translateX(6%);
+  line-height: 1;
+  color: var(--form-input-color);
+}
+
+.note__input--box .form__input:out-of-range {
+  border: 2px solid red;
+  padding: 0.6rem 0;
+}
+
+.note__input--box label {
+  position: absolute;
+  top: 0.85rem;
+  left: 2.47rem;
+  z-index: 1;
+  font: var(--bold-font) var(--label-font-size) var(--poppins);
+  color: var(--form-input-color);
+  pointer-events: none;
+  opacity: 1;
+  visibility: visible;
+  transition: all 450ms ease-out;
+}
+
+.note__input--box .form__input:focus ~ label,
+.note__input--box .form__input:valid + label {
+  font-size: var(--label-font-size-focus);
+  opacity: 0;
+  visibility: hidden;
+  top: -0.938rem;
+  left: 2.5rem;
+}
+
+.note__form .note__button--box {
+  margin-top: 0.3rem;
+  display: inline-flex;
+  justify-content: flex-end;
+}
+
+.note__form .note__button {
+  font: var(--bold-font) var(--subtitle-font-size) var(--poppins);
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  background: var(--linear-gradient-button-background);
+  color: var(--white);
+  transition: opacity 400ms ease-in;
+}
+
+.note__form .note__button:hover,
+.note__form .note__button:focus {
+  opacity: 0.78;
+}
+
+.note__button .button__icon {
+  position: relative;
+  left: 0.2rem;
+  transition: all 300ms ease-out;
+}
+
+.note__button:hover .button__icon,
+.note__button:focus .button__icon {
+  left: 7px;
+}
+
+.note__result {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
+}
+
+.note__result.approved,
+.note__result.disapproved {
+  font: var(--bold-font) 12px var(--poppins);
+  position: absolute;
+  right: 35%;
+  bottom: 20%;
+  z-index: 10;
+  width: 14rem;
+  height: 14rem;
+  border-radius: 0.7rem;
+  background-color: var(--white);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: all 600ms ease-out;
+}
+
+.note__result.approved {
+  background-image: url('../assets/icons/approved.svg');
+  background-repeat: no-repeat;
+  background-position: top 1.25rem center;
+  background-size: 50%;
+}
+
+.note__result.disapproved {
+  background-image: url('../assets/icons/desapproved.svg');
+  background-repeat: no-repeat;
+  background-position: top 1.25rem center;
+  background-size: 50%;
+}
+
+.close-icon {
+  position: absolute;
+  top: 0.438rem;
+  right: 0;
+  align-self: flex-start;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  transition: opacity 300ms ease-in;
+  opacity: 1;
+}
+
+.close-icon:hover {
+  opacity: 0.6;
+}
+
+.close-icon:before,
+.close-icon:after {
+  position: absolute;
+  left: 0.938rem;
+  content: ' ';
+  height: 0.813rem;
+  width: 0.125rem;
+  background-color: var(--form-input-color);
+}
+
+.close-icon:before {
+  transform: rotate(45deg);
+}
+
+.close-icon:after {
+  transform: rotate(-45deg);
+}
+
+.note__result .result--paragraph {
+  padding-bottom: 2.9rem;
+  width: 80%;
+  margin: 0 auto;
+}
