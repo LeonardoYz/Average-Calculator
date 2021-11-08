@@ -26,3 +26,7 @@
   <li>Flexbox</li>
   <li>Javascript</li>
 </ul>
+
+#
+<h3>🔗 Link for project on Codepen</h3>
+<h4><a href="https://codepen.io/LeonardoYz/pen/OJgOarj">Average Calculator</a></h4>
