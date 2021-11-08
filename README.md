@@ -6,7 +6,7 @@
 
 <div align="center">
   <h2>
-    <a href="https://leonardoyz.github.io/Average-Calculator/">
+    <a href="https://leonardoyz.github.io/Average-Calculator/" target="_blank">
       Demo
     </a>
   </h2>
